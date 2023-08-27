@@ -1,0 +1,11 @@
+// Body
+$body-bg: white;
+
+
+// Typography
+$font-family-sans-serif: 'Nunito', sans-serif;
+@mixin family($font) {
+    font-family: $font, "Arial Narrow", Arial, Helvetica, sans-serif;
+}
+$font-size-base: 1rem;
+$line-height-base: 1.6;

@@ -1,0 +1,114 @@
+
+.list-group-item-action, .list-group-item-action:hover {
+    transition: .5s
+}
+
+.list-group-light .list-group-item {
+    padding: 1rem 0;
+    border: 2px solid #f5f5f5
+}
+
+.list-group-light > .list-group-item {
+    border-width: 0 0 2px
+}
+
+.list-group-light > .list-group-item:last-of-type {
+    border: none
+}
+
+.list-group-light .active {
+    border: none;
+    border-radius: .5rem;
+    background-color: #cfe0fc;
+    color: #0a47a9
+}
+
+.list-group-light .list-group-item-action:focus, .list-group-light .list-group-item-action:hover {
+    border-radius: .5rem
+}
+
+.list-group-small .list-group-item {
+    padding: .5 0
+}
+
+.list-group-item.active {
+    border-color: #dfe7f6
+}
+
+.list-group-item-primary, .list-group-item.active {
+    background-color: #dc3545;
+    color: #fff
+}
+
+.list-group-item-primary i {
+    color: #376fc8
+}
+
+.list-group-item-secondary {
+    background-color: #ebedef;
+    color: #40464f
+}
+
+.list-group-item-secondary i {
+    color: #565e6c
+}
+
+.list-group-item-success {
+    background-color: #d6f0e0;
+    color: #0d6832
+}
+
+.list-group-item-success i {
+    color: #139647
+}
+
+.list-group-item-danger {
+    background-color: #f9e1e5;
+    color: #af233a
+}
+
+.list-group-item-danger i {
+    color: #d62e4a
+}
+
+.list-group-item-warning {
+    background-color: #fbf0da;
+    color: #73510d
+}
+
+.list-group-item-warning i {
+    color: #a17112
+}
+
+.list-group-item-info {
+    background-color: #def1f7;
+    color: #1c657d
+}
+
+.list-group-item-info i {
+    color: #2686a6
+}
+
+.list-group-item-light {
+    background-color: #f5f5f5;
+    color: #4f4f4f
+}
+
+.list-group-item-light i {
+    color: #8c8c8c
+}
+
+.list-group-item-dark {
+    background-color: #332e2e;
+    color: #f5f5f5
+}
+
+.list-group-item-dark i {
+    color: #e8e8e8
+}
+.list-group .list-group-item {
+   font-size: 1.1em;
+}
+.list-group-f5f5f5 {
+    background: #f5f5f5;
+}
