@@ -10,7 +10,11 @@
         "laravel/framework": "^10.10",
         "laravel/sanctum": "^3.2",
         "laravel/tinker": "^2.8",
-        "laravel/ui": "^4.2"
+        "laravel/ui": "^4.2",
+        "lee-to/moonshine-tree-resource": "*",
+        "moonshine/moonshine": "^1.61",
+        "spatie/laravel-medialibrary": "^10.0.0",
+        "visual-ideas/moonshine-spatie-medialibrary": "^1.2"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
@@ -26,7 +30,10 @@
             "App\\": "app/",
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/"
-        }
+        },
+        "files": [
+            "app/helpers.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {
