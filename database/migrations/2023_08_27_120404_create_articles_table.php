@@ -16,8 +16,9 @@ return new class extends Migration
             $table->timestamps();
 
             $table->string('title')->index();
+            $table->integer('user_id')->nullable();
             $table->string('sky')->index()->unique();
-            $table->tinyText('slug')->nullable();
+            $table->tinyText('slug')->nullable()->unique();
             $table->string('img')->nullable();
             $table->string('description')->index()->nullable();
             $table->string('shortdescription')->index()->nullable();

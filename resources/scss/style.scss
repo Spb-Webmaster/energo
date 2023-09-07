@@ -14,7 +14,9 @@ body {
     background-repeat: no-repeat;
 
 }
-
+a:hover {
+    text-decoration: none;
+}
 .top_block {
 
     position: relative;
@@ -287,6 +289,10 @@ body {
     }
 }
 
+.color_blue {
+    color: $colorRed;
+}
+
 /////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////
@@ -347,3 +353,64 @@ body {
         height: 31px;
     }
 }
+
+
+////////////////////////////
+////////////////////////////
+/**Категории Categories.categories**/
+////////////////////////////
+////////////////////////////
+
+._categories {
+    ._pgrey {
+        color: $colorGrey;
+    }
+}
+
+////////////////////////////
+////////////////////////////
+/**Категории Categories.categories**/
+////////////////////////////
+////////////////////////////
+
+////////////////////////////
+////////////////////////////
+/**Категория Categories.category**/
+////////////////////////////
+////////////////////////////
+
+._category {
+    ._h2 {
+        padding: 0.2em;
+        font-size: 1.1em;
+        min-height: 30px;
+        margin: 0.3em 0;
+    }
+    ._pgrey {
+        color: $colorGrey;
+    }
+    ._pblack {
+        color: $color;
+    }
+    .item_price {
+        line-height: inherit;
+        align-items: center;
+    }
+}
+.modal-body{
+    background: #f5f5f5;
+    .form-outline {
+        background: #fff;
+    }
+    border-radius: 8px;
+}
+.modal__footer {
+background: $colorRed;
+  //  background-size: cover;
+
+}
+////////////////////////////
+////////////////////////////
+/**Категория Categories.category**/
+////////////////////////////
+////////////////////////////

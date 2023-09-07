@@ -23,6 +23,7 @@ class Article extends Model implements HasMedia
 
     protected $fillable = [
         'title',
+        'slug',
         'sky',
         'img',
         'description',
@@ -30,6 +31,7 @@ class Article extends Model implements HasMedia
         'price',
         'price2',
         'price3',
+        'user_id',
         'analogs',
         'sorting',
     ];
@@ -47,8 +49,8 @@ class Article extends Model implements HasMedia
     public function categories(): BelongsToMany
     {
         return $this->belongsToMany(Category::class)
-            ->withTimestamps()
-            ->withPivot(['is_published', 'priority']);
+            ->withTimestamps();
+
     }
 
 
@@ -68,11 +70,11 @@ class Article extends Model implements HasMedia
         $this->addMediaCollection('gallery');
     }
 
-       public function registerAllMediaConversions(Media $media = null): void
-        {
-            $this->addMediaConversion('thumb')
-                ->width('200')
-                ->height('200');
-        }
+    public function registerAllMediaConversions(Media $media = null): void
+    {
+        $this->addMediaConversion('thumb')
+            ->width('200')
+            ->height('200');
+    }
 
 }

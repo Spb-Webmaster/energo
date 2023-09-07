@@ -28,14 +28,14 @@ class MoonShineServiceProvider extends ServiceProvider
                     ->icon('bookmark'),
             ])->translatable(),
 
-            MenuGroup::make('Разделение', [
-                MenuItem::make('Категории', new CategoryResource())
+            MenuGroup::make(__('Каталог'), [
+                MenuItem::make(__('Категории'), new CategoryResource())
                     ->translatable()
                     ->icon('users'),
 
             ])->translatable(),
-            MenuGroup::make('Продукция', [
-                MenuItem::make('Товары', new ArticleResource())
+            MenuGroup::make(__('Продукция'), [
+                MenuItem::make(__('Товары'), new ArticleResource())
                     ->translatable()
                     ->icon('users'),
 

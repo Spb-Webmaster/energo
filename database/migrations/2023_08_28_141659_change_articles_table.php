@@ -12,7 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('articles', function (Blueprint $table) {
-            $table->string('sky')->index()->unique();
+
+            $table->string('slug')->index()->unique()->nullable()->change();
 
         });
     }
@@ -22,8 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('articles', function (Blueprint $table) {
-            //
-        });
+        //
     }
 };

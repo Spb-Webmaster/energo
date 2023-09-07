@@ -5,6 +5,7 @@ namespace App\MoonShine\Resources;
 //use App\MoonShine\Resources\fields\ItemImg;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Article;
+use App\MoonShine\Action\ImportArticleAction;
 
 use MoonShine\Actions\ExportAction;
 use MoonShine\Actions\ImportAction;
@@ -154,7 +155,7 @@ class ArticleResource extends Resource
         return [
             FiltersAction::make(trans('moonshine::ui.filters')),
             ExportAction::make('Export')->showInLine()->queue(),
-            ImportAction::make('Import')->showInLine()->queue(),
+            ImportArticleAction::make('Import')->showInLine()->queue(),
         ];
     }
 }
