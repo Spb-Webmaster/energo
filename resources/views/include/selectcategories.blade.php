@@ -1,4 +1,4 @@
-<select class="select">
+<select name="select_search" class="select">
 <option value="0">Все</option>
 @foreach($selectcategories as $category)
     @if(isset($slug))
@@ -6,7 +6,10 @@
     @else
         {{ $active = '' }}
     @endif
-    <option  class="{{ $active }}" value="{{ $category->id }}">{{ $category->title }}</option>
+    <option
+{{(session('search.select') == $category->id) ? 'selected' : null}}
+
+        class="{{ $active }}" value="{{ $category->id }}">{{ $category->title }}</option>
 @endforeach
 </select>
 

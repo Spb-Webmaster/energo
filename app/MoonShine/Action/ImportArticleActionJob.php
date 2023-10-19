@@ -37,7 +37,7 @@ class ImportArticleActionJob implements ShouldQueue
     public function handle(): void
     {
 
-        ImportArticleAction::process(
+        ImportAction::process(
             $this->path,
             new $this->resource(),
             $this->deleteAfter,

@@ -7,6 +7,9 @@ use App\MoonShine\Resources\CategoryResource;*/
 
 use App\MoonShine\Resources\ArticleResource;
 use App\MoonShine\Resources\CategoryResource;
+use App\MoonShine\Resources\PerkinsResource;
+use App\MoonShine\Resources\CumminsResource;
+use App\MoonShine\Resources\ProductcategoryResource;
 use Illuminate\Support\ServiceProvider;
 use MoonShine\MoonShine;
 use MoonShine\Menu\MenuGroup;
@@ -28,14 +31,33 @@ class MoonShineServiceProvider extends ServiceProvider
                     ->icon('bookmark'),
             ])->translatable(),
 
-            MenuGroup::make(__('Каталог'), [
+            MenuGroup::make(__('Раздел'), [
                 MenuItem::make(__('Категории'), new CategoryResource())
+                    ->translatable()
+                    ->icon('users'),
+
+            ])->translatable(),
+
+            MenuGroup::make(__('Каталог'), [
+                MenuItem::make(__('Бренды'), new ProductcategoryResource())
                     ->translatable()
                     ->icon('users'),
 
             ])->translatable(),
             MenuGroup::make(__('Продукция'), [
                 MenuItem::make(__('Товары'), new ArticleResource())
+                    ->translatable()
+                    ->icon('users'),
+
+            ])->translatable(),
+            MenuGroup::make(__('Perkins'), [
+                MenuItem::make(__('Товары'), new PerkinsResource())
+                    ->translatable()
+                    ->icon('users'),
+
+            ])->translatable(),
+            MenuGroup::make(__('Cummins'), [
+                MenuItem::make(__('Товары'), new CumminsResource())
                     ->translatable()
                     ->icon('users'),
 

@@ -1,5 +1,6 @@
 <form method="post" action="{{ route('order') }}" enctype="multipart/form-data">
     @csrf
+    @honeypot
     <div class="rounded">
         <div class="form-outline pt-2 mt-3">
             <input type="text" name="name" id="name{{ $item->id }}" class="form-control" />

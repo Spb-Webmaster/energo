@@ -1,9 +1,8 @@
 @extends('layouts.app')
-@section('title' ,  'category.blade.php')
-@section('description' , 'category.blade.php' )
-@section('keywords' ,  'category.blade.php')
+@section('title' , 'resources/views/product/product.blade.php')
+@section('description' ,  'resources/views/product/product.blade.php')
+@section('keywords' ,  'resources/views/product/product.blade.php' )
 @section('content')
-
 
     <section class="top_block">
         <x-header/>
@@ -17,15 +16,14 @@
                 <x-left_bar/>
             </div>
             <div class="right_bar div_content w-75 p-3">
-                <h1 class="mb-3"><span class="color_blue">{{ (isset($category['title']))?$category['title']:__('Поиск') }}</span>  <span class="fs-6">- {{  __('Каталог ООО «ТК «ДизельМаш»') }}</span></h1>
-                @if($items->isNotEmpty())
+                <div class="_h1 mb-3"><span class="color_blue">{{ $category['title'] }}</span>  <span class="fs-6">- {{  __('Каталог ООО «ТК «ДизельМаш»')}}</span></div>
+                @if($item)
                     <div class="_category">
-                        @foreach($items as $item)
 
                             <div class="card mb-3">
                                 <div class="card-body">
                                     <div class="cat_h2">
-                                        <h2 class="_h2 "><a href="{{ route($item->getTable(),  $item->slug) }}">{{ $item->title }}</a></h2>
+                                        <h1 class="_h2 ">{{ $item->title }}</h1>
                                     </div>
                                     <div class="d-flex pt-2">
                                         <div class="w-50">
@@ -40,11 +38,9 @@
                                 </div>
                             </div>
                             <x-modal :item="$item"></x-modal>
-                    @endforeach
             </div>
             @endif
 
-            {{ $items->links('pagination::bootstrap-5') }}
 
         </div>
         </div>

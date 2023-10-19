@@ -1,7 +1,7 @@
 @extends('layouts.app')
-@section('title' ,  'category.blade.php')
-@section('description' , 'category.blade.php' )
-@section('keywords' ,  'category.blade.php')
+@section('title' ,  'search.blade.php')
+@section('description' , 'search.blade.php' )
+@section('keywords' ,  'search.blade.php')
 @section('content')
 
 
@@ -17,8 +17,8 @@
                 <x-left_bar/>
             </div>
             <div class="right_bar div_content w-75 p-3">
-                <h1 class="mb-3"><span class="color_blue">{{ (isset($category['title']))?$category['title']:__('Поиск') }}</span>  <span class="fs-6">- {{  __('Каталог ООО «ТК «ДизельМаш»') }}</span></h1>
-                @if($items->isNotEmpty())
+                <h1 class="mb-3"><span class="color_blue">{{ $title }}</span>  <span class="fs-6">- {{  __('Каталог ООО «ТК «ДизельМаш»') }}</span></h1>
+                @if(isset($items))
                     <div class="_category">
                         @foreach($items as $item)
 
@@ -40,15 +40,17 @@
                                 </div>
                             </div>
                             <x-modal :item="$item"></x-modal>
-                    @endforeach
+                        @endforeach
+                    </div>
+                @endif
+
+                {{ $items->links('pagination::bootstrap-5') }}
+
+
             </div>
-            @endif
-
-            {{ $items->links('pagination::bootstrap-5') }}
-
-        </div>
         </div>
     </section>
 
 
 @endsection
+

@@ -13,6 +13,7 @@
         "laravel/ui": "^4.2",
         "lee-to/moonshine-tree-resource": "*",
         "moonshine/moonshine": "^1.61",
+        "spatie/laravel-honeypot": "^4.3",
         "spatie/laravel-medialibrary": "^10.0.0",
         "visual-ideas/moonshine-spatie-medialibrary": "^1.2"
     },

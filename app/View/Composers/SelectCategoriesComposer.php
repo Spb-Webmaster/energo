@@ -3,6 +3,7 @@ namespace App\View\Composers;
 
 use App\Models\Article;
 use App\Models\Category;
+use App\Models\Productcategory;
 use Illuminate\View\View;
 
 class SelectCategoriesComposer
@@ -14,7 +15,7 @@ class SelectCategoriesComposer
 
         // dd(url()->current());
 
-        $category = Category::query()->orderBy('sorting')->get();
+        $category = Productcategory::query()->orderBy('sorting')->get();
         $view->with('selectcategories', $category);
 
     }

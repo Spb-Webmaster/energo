@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>@yield('title')</title>
+    <meta name="description" content="@yield('description')"/>
+    <meta name="keywords" content="@yield('keywords')" />
 
     @vite([
     'resources/scss/app.scss',
@@ -13,7 +15,14 @@
 
 </head>
 <body class="antialiased">
-
+@if(session('flash.message'))
+<div class="system_message">
+    <div class="alert alert-{{ session('flash.type') }} system_message alert-dismissible fade show" role="alert">
+         {{ session('flash.message') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+</div>
+@endif
 @yield('content')
 
 <section class="contaiter_footer">

@@ -14,9 +14,11 @@ body {
     background-repeat: no-repeat;
 
 }
+
 a:hover {
     text-decoration: none;
 }
+
 .top_block {
 
     position: relative;
@@ -247,7 +249,7 @@ a:hover {
 /////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////
 .div_content {
-    h1 {
+    h1, ._h1 {
         font-size: 2em;
         @include family('Open Sans');
         padding: 0 0 13px 0;
@@ -305,6 +307,15 @@ a:hover {
     background-color: #d8e5f8;
     margin: 20px 0;
 
+    a {
+        text-decoration: none;
+        color: #234b85;
+
+    }
+    a:hover {
+        color: $color;
+    }
+
     h2 {
         color: #234b85;
         font-size: 1.7em;
@@ -338,17 +349,19 @@ a:hover {
         border-bottom: 1px solid #4949a8;
 
     }
+
     .spb-webmaster {
         font-size: 0.9em;
-        color: #b9d0f0 ;
+        color: #b9d0f0;
 
-        a{
+        a {
             &:hover {
                 text-decoration: none;
             }
         }
 
     }
+
     .metrica {
         height: 31px;
     }
@@ -386,31 +399,91 @@ a:hover {
         min-height: 30px;
         margin: 0.3em 0;
     }
+
     ._pgrey {
         color: $colorGrey;
     }
+
     ._pblack {
         color: $color;
     }
+
     .item_price {
         line-height: inherit;
         align-items: center;
     }
 }
-.modal-body{
+
+.modal-body {
     background: #f5f5f5;
+
     .form-outline {
         background: #fff;
     }
+
     border-radius: 8px;
 }
+
 .modal__footer {
-background: $colorRed;
-  //  background-size: cover;
+    background: $colorRed;
+    //  background-size: cover;
 
 }
+
 ////////////////////////////
 ////////////////////////////
 /**Категория Categories.category**/
 ////////////////////////////
 ////////////////////////////
+
+/* alert system_message */
+
+.system_message {
+    width: 100%;
+    min-height: 60px;
+    position: relative;
+    z-index: 100;
+
+
+    .alert {
+        border-radius: 0;
+        text-align: center;
+        position: fixed;
+        width: 100%;
+    }
+}
+
+/* alert system_message */
+/* product_price */
+.product_price {
+    @include family('Open Sans');
+    margin: 0 3px 0 0
+}
+
+.product_currency {
+    color: $colorGrey;
+    font-size: 13px
+}
+
+/* product_price */
+/* pagination */
+.page-item {
+
+    &.active {
+        span {
+            background: $colorRed;
+        }
+    }
+    a,span {
+        color: $colorRed;
+    }
+
+}
+/* pagination */
+
+/*._content  {
+    p {
+        font-family: 'Source Sans 3';
+        font-weight: 900;
+    }
+}*/

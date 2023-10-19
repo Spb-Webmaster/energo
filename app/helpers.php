@@ -11,9 +11,12 @@ if (!function_exists('active_link')) {
             $names = [$names];
         }
 
+
+
         return Route::is($names) ? $class : null;
     }
 }
+
 if (!function_exists('write_a_file')) {
 
     function write_a_file(object $request, string $path, array $width,  string $input_name): string
@@ -33,8 +36,36 @@ if (!function_exists('write_a_file')) {
             $thumbnail->save(Storage::path($new_path).$filename);
         }
 
-
         return $filename; // для сохранения в БД
     }
 }
+
+if (!function_exists('system_message')) {
+
+    function system_message(string $message, string $type = 'success') :void
+    {
+        session()->flash('flash.message', $message);
+        session()->flash('flash.type', $type);
+    }
+}
+if (!function_exists('money')) {
+
+    function money(string $price =  null) :string|null
+    {
+        if($price) {
+
+            return number_format($price, 0, ',', " ");
+
+        }
+        return  null;
+    }
+}
+if (!function_exists('currency')) {
+
+    function currency(string $currency = null) :string
+    {
+       return '₽';
+    }
+}
+
 

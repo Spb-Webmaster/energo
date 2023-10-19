@@ -2,21 +2,17 @@
 
 namespace App\MoonShine\Resources;
 
-//use App\MoonShine\Resources\fields\ItemImg;
+use App\MoonShine\Action\ImportActionProduct;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Article;
-use App\MoonShine\Action\ImportArticleAction;
+use App\Models\Perkins;
 
 use MoonShine\Actions\ExportAction;
-use MoonShine\Actions\ImportAction;
 use MoonShine\Decorations\Block;
 use MoonShine\Decorations\Column;
 use MoonShine\Decorations\Grid;
 use MoonShine\Fields\BelongsTo;
-use MoonShine\Fields\BelongsToMany;
 use MoonShine\Fields\Image;
 use MoonShine\Fields\Slug;
-use MoonShine\Fields\SwitchBoolean;
 use MoonShine\Fields\Text;
 use MoonShine\Fields\Textarea;
 use MoonShine\Fields\TinyMce;
@@ -25,20 +21,21 @@ use MoonShine\Fields\ID;
 use MoonShine\Actions\FiltersAction;
 use VI\MoonShineSpatieMediaLibrary\Fields\MediaLibrary;
 
-class ArticleResource extends Resource
+class PerkinsResource extends Resource
 {
-	public static string $model = Article::class;
+	public static string $model = Perkins::class;
 
 	public static string $title = 'Perkins';
 
-	public function fields(): array
-	{
+    public function fields(): array
+    {
         return [
             ID::make()->sortable()->showOnExport()->useOnImport(),
 
             Grid::make([
                 Column::make([
                     Block::make('Продукт', [
+
 
                         Text::make('Наименование', 'title')
                             ->useOnImport()
@@ -59,7 +56,6 @@ class ArticleResource extends Resource
                             ->hint('Обязательное поле')
                             //  ->addLink('link', 'https://spb-webmaster.ru', '_blank')
                             ->required(),
-
                         Image::make('Изображение', 'img')
                             ->hint('На витрину')
                             ->hideOnIndex()
@@ -68,14 +64,15 @@ class ArticleResource extends Resource
                             ->disk('public') // Filesystems disk
                             ->allowedExtensions(['jpg', 'gif', 'png', 'svg']) /* Допустимые расширения */
                             ->removable(),
-/*
-                        ItemImg::make('Изображение', 'Item-img')
-                            ->hideOnIndex(),*/
+                        /*
+                                                ItemImg::make('Изображение', 'Item-img')
+                                                    ->hideOnIndex(),*/
 
                         MediaLibrary::make('Галерея', 'gallery')
                             ->hideOnIndex()
                             ->removable()
                             ->multiple(),
+
 
                         Block::make('Краткое описание', [
 
@@ -105,13 +102,6 @@ class ArticleResource extends Resource
                             ->searchable()
                             ->hideOnIndex(),
 
-                        belongsToMany::make('Категория', 'cat', 'title')
-
-                            ->showOnExport()
-                            ->searchable()
-                            ->select()
-                            ->inLine(separator: ' ', badge: true)
-                      //      ->hideOnIndex()
 
                     ]),
                     Block::make('Стоимость товара', [
@@ -128,11 +118,11 @@ class ArticleResource extends Resource
             ]),
 
         ];
-	}
+    }
 
-	public function rules(Model $item): array
-	{
-	    return [];
+    public function rules(Model $item): array
+    {
+        return [];
     }
 
     public function search(): array
@@ -154,7 +144,7 @@ class ArticleResource extends Resource
         return [
             FiltersAction::make(trans('moonshine::ui.filters')),
             ExportAction::make('Export')->showInLine()->queue(),
-            ImportArticleAction::make('Import')->showInLine(),
+            ImportActionProduct::make('Import')->showInLine(),
         ];
     }
 }

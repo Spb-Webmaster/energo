@@ -1,4 +1,7 @@
 @extends('layouts.app')
+@section('title' ,  __('Каталог продукции') )
+@section('description' ,   __('Каталог продукции')  )
+@section('keywords' ,   __('помпы,кольца,поршни,масляные насосы,клапаны,распредвалы,стартеры,генераторы,головки блока цилиндров,топливные и воздушные фильтры Perkins,наборы прокладок,распылители,ремени,термостаты,топливные насосы,тнвд Perkins,турбокомпрессоры,форсунки,шатуны,ISX Perkins,втулки,генераторы,клапаны,коленвалы,распылители,стартеры,турбокомпрессоры Perkins.')  )
 @section('content')
 
     <section class="top_block">
@@ -17,20 +20,22 @@
                 <h1>Каталог ООО «ТК «ДизельМаш»</h1>
                 @if($categories->isNotEmpty())
                     <div class="_categories">
-                    @foreach($categories as $category)
+                        @foreach($categories as $category)
 
-                        <div class="card mb-3">
-                            <div class="card-body">
-                                <div class="_h2  px-3">
-                                    <h2 class="_h2">{{ $category->title }}</h2>
+                            <div class="card mb-3">
+                                <div class="card-body">
+                                    <div class="_h2  px-3">
+                                        <h2 class="_h2">{{ $category->title }}</h2>
+                                    </div>
+                                    <p class="card-text">{{ $category->short_description }}</p>
+
+
+                                    <p class="_pgrey"><span>{{__('В раздел ') }} </span> <a
+                                            href="/catalog/{{ $category->slug }}">{{ $category->title }}</a>
+                                    </p>
                                 </div>
-                                <p class="card-text">{{ $category->short_description }}</p>
-
-
-                                <p class="_pgrey"><span>{{__('В раздел ') }} </span> <a href="{{ route('category', ($category->slug)?:$category->id) }}">{{ $category->title }}</a></p>
                             </div>
-                        </div>
-                    @endforeach
+                        @endforeach
                     </div>
                 @endif
             </div>
